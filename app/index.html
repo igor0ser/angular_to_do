@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+<head>
+	<meta charset="utf-8">
+	<title-profile></title-profile>
+	<link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="vendor/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link rel="favicon" href="favicon.ico">
+	
+	<script src="vendor/jquery/dist/jquery.min.js"></script>
+	<script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+
+
+
+	<div class="container">
+		
+		<todo-header></todo-header>
+
+		<todo-form></todo-form>
+
+		<task-table></task-table>
+
+
+	</div>
+
+	<edit-profile></edit-profile>
+
+
+	<!-- angular -->
+	<script src="vendor/angular/angular.min.js"></script>
+	<!-- app -->
+	<script src="app.js"></script>
+	<!-- header -->
+	<script src="modules/todo-header/controller.js"></script>
+	<script src="modules/todo-header/directive.js"></script>
+	<!-- form -->
+	<script src="modules/todo-form/controller.js"></script>
+	<script src="modules/todo-form/directive.js"></script>
+	<!-- table -->
+	<script src="modules/todo-table/directive.js"></script>
+	<script src="modules/todo-table/controller.js"></script>
+	<script src="modules/todo-table/filter.js"></script>
+	<!-- profile -->
+	<script src="modules/edit-profile/directive.js"></script>
+	<script src="modules/edit-profile/controller.js"></script>
+	<!-- title -->
+	<script src="modules/title/directive.js"></script>
+
+	<!-- title -->
+	<script src="modules/common/profile-service.js"></script>
+</body>
+</html>

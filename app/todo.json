@@ -1,0 +1,23 @@
+[
+	{
+		"description": "Learn AngularJS", 
+		"responsible": "Igor Sergiienko",
+		"estHours": 20,
+		"deadline": "2015-12-31T12:00:00.000Z",
+		"done": false
+	},
+	{
+		"description": "Learn jQuery", 
+		"responsible": "Igor Sergiienko",
+		"estHours": 18,
+		"deadline": "2015-11-30T18:00:00.000Z",
+		"done": true
+	},
+	{
+		"description": "Finish my homework", 
+		"responsible": "Igor Sergiienko",
+		"estHours": 8,
+		"deadline": "2015-12-15T18:00:00.000Z",
+		"done": false
+	}
+]

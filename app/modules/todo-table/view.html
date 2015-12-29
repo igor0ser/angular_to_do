@@ -1,0 +1,58 @@
+<div class="panel">
+
+	<label>
+		<input type="checkbox" ng-model="TableCtrl.showComplete">
+		Show completed
+	</label>
+	<button class="btn btn-danger" ng-click="TableCtrl.removeComplited()">
+		Delete all complited
+	</button>
+
+	<table class="table table-striped">
+
+		<thead>
+			<tr>
+				<th>#</th>
+				<th ng-click="TableCtrl.sort('description')">
+					Description
+					<i ng-class="TableCtrl.glyphicon('description')"></i>
+				</th>
+				<th ng-click="TableCtrl.sort('responsible')">
+					Responsible
+					<i ng-class="TableCtrl.glyphicon('responsible')"></i>
+				</th>
+				<th ng-click="TableCtrl.sort('estHours')">
+					Est. Hours
+					<i ng-class="TableCtrl.glyphicon('estHours')"></i>
+				</th>
+				<th ng-click="TableCtrl.sort('deadline')">
+					Deadline
+					<i ng-class="TableCtrl.glyphicon('deadline')"></i>
+				</th>
+				<th>Checkbox</th>
+				<th>Done</th>
+				<th>Delete</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="item in TableCtrl.model.items | checkedItems: TableCtrl.showComplete | orderBy: sortField : TableCtrl.sortReverse">
+				<td>{{$index + 1}}</td>
+				<td>{{item.description}}</td>
+				<td>{{item.responsible}}</td>
+				<td>{{item.estHours}}</td>
+				<td>{{item.deadline | date:'HH:mm dd MMM yyyy'}}</td>
+				<td><input type="checkbox" ng-model="item.done" ng-click="TableCtrl.saveChanges()"></td>
+				<td>{{item.done}}</td>
+				<td>
+					<button class="btn" 
+					ng-click="TableCtrl.remove($index)"
+					ng-class="item.done ? 'btn-success' : 'btn-warning'">
+						Del
+					</button>
+				</td>
+			</tr> 
+
+		</tbody>
+	</table>
+</div>

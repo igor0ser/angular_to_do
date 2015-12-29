@@ -1,0 +1,13 @@
+<div class="page-header">
+	<h1><img class="photo" ng-src="{{HeaderCtrl.model.userPhoto}}">
+		{{HeaderCtrl.model.userName}}'s To Do List
+
+		<span 
+		ng-hide="HeaderCtrl.incompleteCount(HeaderCtrl.model.items) === 0"
+		ng-class="HeaderCtrl.warningLevel(HeaderCtrl.model.items)" 
+		class="label pull-right">
+			unresolved: {{HeaderCtrl.incompleteCount(HeaderCtrl.model.items)}}
+		</span>
+	</h1> 
+	<button class="btn btn-success btn-xs" data-toggle="modal" data-target="#edit-profile">Edit profile</button>
+</div>
