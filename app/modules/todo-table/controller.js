@@ -16,7 +16,7 @@
 		_this.sortField = null;
 		_this.sortReverse = false;
 		_this.firstTaskShown = 0;
-		_this.showTasksPerPage = 10;
+		_this.showTasksPerPage = '10';
 		_this.searchQuery = '';
 		_this.searchObj = {};
 
