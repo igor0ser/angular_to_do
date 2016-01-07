@@ -7,6 +7,13 @@
 	<button class="btn btn-danger" ng-click="TableCtrl.removeComplited()">
 		Delete all complited
 	</button>
+	<div class="pull-right col-md-4 form-group">
+
+		<input type="text" class="form-control"
+			ng-model="TableCtrl.searchQuery"
+			placeholder="Search for task in description or responsible">
+	</div>
+
 
 	<table class="table table-striped">
 
@@ -34,10 +41,14 @@
 				<th>Delete</th>
 			</tr>
 		</thead>
-
+	<!-- | filter: TableCtrl.searchObj -->
 		<tbody>
-			<tr ng-repeat="item in TableCtrl.model.items | checkedItems: TableCtrl.showComplete | orderBy: sortField : TableCtrl.sortReverse">
-				<td>{{$index + 1}}</td>
+			<tr ng-repeat="item in TableCtrl.model.items  
+					| filter: TableCtrl.search
+					| checkedItems : TableCtrl.showComplete 
+					| orderBy : TableCtrl.sortField : TableCtrl.sortReverse
+					| limitTo : TableCtrl.showTasksPerPage : TableCtrl.firstTaskShown"> 
+				<td>{{$index + 1 + +TableCtrl.firstTaskShown}}</td>
 				<td>{{item.description}}</td>
 				<td>{{item.responsible}}</td>
 				<td>{{item.estHours}}</td>
@@ -55,4 +66,24 @@
 
 		</tbody>
 	</table>
+	<button 
+	class="btn btn-success" 
+	ng-click="
+		TableCtrl.firstTaskShown = (TableCtrl.firstTaskShown - +TableCtrl.showTasksPerPage) < 0 ? 0 :
+			(TableCtrl.firstTaskShown - +TableCtrl.showTasksPerPage)"
+	ng-disabled="TableCtrl.firstTaskShown <= 0">
+		Prev
+	</button>
+	<button 
+	class="btn btn-success" 
+	ng-click="TableCtrl.firstTaskShown = TableCtrl.firstTaskShown + +TableCtrl.showTasksPerPage"
+	ng-disabled="TableCtrl.firstTaskShown > TableCtrl.model.items.length - +TableCtrl.showTasksPerPage - 1">
+		Next
+	</button>
+	Show per page
+	<select ng-model="TableCtrl.showTasksPerPage">
+		<option value="5">5</option>
+		<option value="10" selected>10</option>
+		<option value="20">20</option>
+	</select>
 </div>

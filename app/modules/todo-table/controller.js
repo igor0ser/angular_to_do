@@ -15,6 +15,10 @@
 		_this.showComplete = true;
 		_this.sortField = null;
 		_this.sortReverse = false;
+		_this.firstTaskShown = 0;
+		_this.showTasksPerPage = 10;
+		_this.searchQuery = '';
+		_this.searchObj = {};
 
 		//functions
 		_this.glyphicon = glyphicon;
@@ -22,6 +26,9 @@
 		_this.removeComplited = removeComplited;
 		_this.sort = sort;
 		_this.saveChanges = saveChanges;
+		_this.search = search;
+
+
 
 		function glyphicon(fieldName){
 			if (_this.sortField === fieldName){
@@ -48,17 +55,29 @@
 		}
 
 		function sort(fieldName){
-
+			console.log(1 + fieldName);
 			if (_this.sortField === fieldName){
 				_this.sortReverse = !_this.sortReverse;
 			} else {
 				_this.sortField = fieldName;
 				_this.sortReverse = false;
 			}
+
+			console.log(2+_this.sortField);
+			console.log('3'+_this.sortReverse);
 		}
 
 		function saveChanges(){
 			profileService.set(_this.model);
+		}
+
+		function search(task) {
+			if (_this.searchQuery === '') return true;
+
+			var firstFlag = angular.lowercase(task.description).indexOf(angular.lowercase(_this.searchQuery)) !== -1;
+			var secondFlag = angular.lowercase(task.responsible).indexOf(angular.lowercase(_this.searchQuery)) !== -1;
+
+			return firstFlag || secondFlag;
 		}
 
 	}]);
