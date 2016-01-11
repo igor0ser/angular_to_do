@@ -2,6 +2,13 @@
 var gulp = require("gulp");
 var plug = require("gulp-load-plugins")();
 var path = require('path');
+var concat = require('gulp-concat');
+
+gulp.task('js_concat', function() {  
+	return gulp.src('app/modules/*.js')
+		.pipe(concat('app.js'))
+		.pipe(gulp.dest('app/app.js'))
+});
 
 // paths
 var paths = {

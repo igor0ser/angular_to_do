@@ -4,7 +4,7 @@
 		<input type="checkbox" ng-model="TableCtrl.showComplete">
 		Show completed
 	</label>
-	<button class="btn btn-danger" ng-click="TableCtrl.removeComplited()">
+	<button class="ml25 btn btn-danger" ng-click="TableCtrl.removeComplited()">
 		Delete all complited
 	</button>
 	<div class="pull-right col-md-4 form-group">
@@ -41,13 +41,15 @@
 				<th>Delete</th>
 			</tr>
 		</thead>
-	<!-- | filter: TableCtrl.searchObj -->
+
 		<tbody>
-			<tr ng-repeat="item in TableCtrl.model.items  
+			<tr ng-repeat="
+					item in TableCtrl.model.items  
 					| filter: TableCtrl.search
 					| checkedItems : TableCtrl.showComplete 
 					| orderBy : TableCtrl.sortField : TableCtrl.sortReverse
-					| limitTo : TableCtrl.showTasksPerPage : TableCtrl.firstTaskShown"> 
+					| limitTo : TableCtrl.showTasksPerPage : TableCtrl.firstTaskShown
+			"> 
 				<td>{{$index + 1 + +TableCtrl.firstTaskShown}}</td>
 				<td>{{item.description}}</td>
 				<td>{{item.responsible}}</td>
@@ -57,8 +59,8 @@
 				<td>{{item.done}}</td>
 				<td>
 					<button class="btn" 
-					ng-click="TableCtrl.remove($index)"
-					ng-class="item.done ? 'btn-success' : 'btn-warning'">
+						ng-click="TableCtrl.remove($index)"
+						ng-class="item.done ? 'btn-success' : 'btn-warning'">
 						Del
 					</button>
 				</td>
@@ -66,24 +68,27 @@
 
 		</tbody>
 	</table>
+
 	<button 
-	class="btn btn-success" 
-	ng-click="
-		TableCtrl.firstTaskShown = (TableCtrl.firstTaskShown - +TableCtrl.showTasksPerPage) < 0 ? 0 :
-			(TableCtrl.firstTaskShown - +TableCtrl.showTasksPerPage)"
-	ng-disabled="TableCtrl.firstTaskShown <= 0">
+		class="btn btn-success" 
+		ng-click="TableCtrl.prevPage()"
+		ng-disabled="TableCtrl.firstTaskShown <= 0">
 		Prev
 	</button>
 	<button 
-	class="btn btn-success" 
-	ng-click="TableCtrl.firstTaskShown = TableCtrl.firstTaskShown + +TableCtrl.showTasksPerPage"
-	ng-disabled="TableCtrl.firstTaskShown > TableCtrl.model.items.length - +TableCtrl.showTasksPerPage - 1">
+		class="btn btn-success" 
+		ng-click="TableCtrl.nextPage()"
+		ng-disabled="TableCtrl.firstTaskShown > TableCtrl.model.items.length - +TableCtrl.showTasksPerPage - 1">
 		Next
 	</button>
-	Show per page
-	<select ng-model="TableCtrl.showTasksPerPage">
-		<option value="5">5</option>
-		<option value="10">10</option>
-		<option value="20">20</option>
-	</select>
+	<label class="ml25">
+		Show per page
+		<select ng-model="TableCtrl.showTasksPerPage">
+			<option value="5">5</option>
+			<option value="10">10</option>
+			<option value="20">20</option>
+		</select>
+	</label>
+
+
 </div>

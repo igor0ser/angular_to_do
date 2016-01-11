@@ -4,23 +4,20 @@
 	var app = angular.module('app');
 
 	app.controller( 'todoHeaderController', ['model', 'profileService', function(model, profileService){
-		var _this = this;
+		var vm = this;
 
-		profileService.check(model);
 		//model
-		_this.model = model;	
-
+		vm.model = model;
 
 		//functions
-		_this.warningLevel = warningLevel;
-		_this.incompleteCount = incompleteCount;
+		vm.warningLevel = warningLevel;
+		vm.incompleteCount = incompleteCount;
 
 		function incompleteCount(items){
 			var count = 0;
 			angular.forEach(items, function(item){
 				if (!item.done) count++;
 			});
-
 			return count;
 		}
 

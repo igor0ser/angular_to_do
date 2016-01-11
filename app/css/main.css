@@ -19,3 +19,7 @@ th[ng-click]{
 input:-webkit-autofill{
 	background: #fff;
 }
+
+.ml25{
+	margin-left: 25px;
+}

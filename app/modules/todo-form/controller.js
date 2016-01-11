@@ -4,29 +4,26 @@
 	var app = angular.module('app');
 	
 	app.controller('todoFormController', ['model', 'profileService', function(model, profileService){
-		var _this = this;
+		var vm = this;
 
-		profileService.check(model);
 		//model
-		_this.model = model;
+		vm.model = model;
+		vm.newItem = {}
 		//functions
-		_this.addNewItem = addNewItem;
-		_this.newItem = {}
+		vm.addNewItem = addNewItem;
+
 
 		function addNewItem(){
-			_this.model.items.push({
-				description: _this.newItem.description,
-				responsible: _this.newItem.responsible,
-				estHours: _this.newItem.estHours,
-				deadline: new Date(_this.newItem.deadline),
+			vm.model.items.push({
+				description: vm.newItem.description,
+				responsible: vm.newItem.responsible,
+				estHours: vm.newItem.estHours,
+				deadline: new Date(vm.newItem.deadline),
 				done: false
 			});
 
-			profileService.set(_this.model);
-
-
-			
-			_this.newItem = {};
+			profileService.set(vm.model);
+			vm.newItem = {};
 
 			angular.element('[name="todoForm"] .form-control').removeClass('ng-dirty');
 		};

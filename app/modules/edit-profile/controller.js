@@ -4,24 +4,24 @@
 	var app = angular.module('app');
 
 	app.controller( 'editProfileController', ['model', 'profileService', function(model, profileService){
-		var _this = this;
+		var vm = this;
 
 		profileService.check(model);
 		//model
-		_this.model = model;
-		_this.newProfile = {};
+		vm.model = model;
+		vm.newProfile = {};
 		//functions
-		_this.editProfile = editProfile;
+		vm.editProfile = editProfile;
 
 
 
 		function editProfile(){
 
-			_this.newProfile.userName && (_this.model.userName = _this.newProfile.userName);
-			_this.newProfile.userPhoto && (_this.model.userPhoto = _this.newProfile.userPhoto);
+			vm.newProfile.userName && (vm.model.userName = vm.newProfile.userName);
+			vm.newProfile.userPhoto && (vm.model.userPhoto = vm.newProfile.userPhoto);
 
-			profileService.set(_this.model);
-			_this.newProfile = {};
+			profileService.set(vm.model);
+			vm.newProfile = {};
 
 			angular.element('.close').click();
 

@@ -5,34 +5,36 @@
 
 	app.controller('TodoTableController', ['$scope', 'model', 'profileService', function ($scope, model, profileService){
 		
-		var _this = this;
+		var vm = this;
 
 		profileService.check(model);
 
 		//model
-		_this.model = model;
+		vm.model = model;
 		//variables
-		_this.showComplete = true;
-		_this.sortField = null;
-		_this.sortReverse = false;
-		_this.firstTaskShown = 0;
-		_this.showTasksPerPage = '10';
-		_this.searchQuery = '';
-		_this.searchObj = {};
+		vm.showComplete = true;
+		vm.sortField = null;
+		vm.sortReverse = false;
+		vm.firstTaskShown = 0;
+		vm.showTasksPerPage = '10';
+		vm.searchQuery = '';
+		vm.searchObj = {};
 
 		//functions
-		_this.glyphicon = glyphicon;
-		_this.remove = remove;
-		_this.removeComplited = removeComplited;
-		_this.sort = sort;
-		_this.saveChanges = saveChanges;
-		_this.search = search;
+		vm.glyphicon = glyphicon;
+		vm.remove = remove;
+		vm.removeComplited = removeComplited;
+		vm.sort = sort;
+		vm.saveChanges = saveChanges;
+		vm.search = search;
+		vm.prevPage = prevPage;
+		vm.nextPage = nextPage;
 
 
 
 		function glyphicon(fieldName){
-			if (_this.sortField === fieldName){
-				if (_this.sortReverse){
+			if (vm.sortField === fieldName){
+				if (vm.sortReverse){
 					return 'glyphicon glyphicon-chevron-up';
 				} else {
 					return 'glyphicon glyphicon-chevron-down'
@@ -41,45 +43,49 @@
 		}
 
 		function remove(i){
-			_this.model.items.splice(i, 1);
-			profileService.set(_this.model);
+			vm.model.items.splice(i, 1);
+			vm.saveChanges();
 		}
 
 		function removeComplited(){
-			for (var i = _this.model.items.length-1; i >= 0; i--){
-				if (_this.model.items[i].done){
-					_this.model.items.splice(i, 1);
+			for (var i = vm.model.items.length-1; i >= 0; i--){
+				if (vm.model.items[i].done){
+					vm.model.items.splice(i, 1);
 				}
 			}
-			profileService.set(_this.model);
-		}
-
-		function sort(fieldName){
-			console.log(1 + fieldName);
-			if (_this.sortField === fieldName){
-				_this.sortReverse = !_this.sortReverse;
-			} else {
-				_this.sortField = fieldName;
-				_this.sortReverse = false;
-			}
-
-			console.log(2+_this.sortField);
-			console.log('3'+_this.sortReverse);
+			vm.saveChanges();
 		}
 
 		function saveChanges(){
-			profileService.set(_this.model);
+			profileService.set(vm.model);
+		}
+
+		function sort(fieldName){
+			if (vm.sortField === fieldName){
+				vm.sortReverse = !vm.sortReverse;
+			} else {
+				vm.sortField = fieldName;
+				vm.sortReverse = false;
+			}
 		}
 
 		function search(task) {
-			if (_this.searchQuery === '') return true;
+			if (vm.searchQuery === '') return true;
 
-			var firstFlag = angular.lowercase(task.description).indexOf(angular.lowercase(_this.searchQuery)) !== -1;
-			var secondFlag = angular.lowercase(task.responsible).indexOf(angular.lowercase(_this.searchQuery)) !== -1;
+			var firstFlag = angular.lowercase(task.description).indexOf(angular.lowercase(vm.searchQuery)) !== -1;
+			var secondFlag = angular.lowercase(task.responsible).indexOf(angular.lowercase(vm.searchQuery)) !== -1;
 
 			return firstFlag || secondFlag;
 		}
 
+		function prevPage() {
+			vm.firstTaskShown = (vm.firstTaskShown - +vm.showTasksPerPage) < 0 ? 0 : 
+								(vm.firstTaskShown - +vm.showTasksPerPage)
+		}
+
+		function nextPage() {
+			vm.firstTaskShown = vm.firstTaskShown + +vm.showTasksPerPage
+		}
 	}]);
 
 })();

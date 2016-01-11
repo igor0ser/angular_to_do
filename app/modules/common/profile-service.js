@@ -3,9 +3,14 @@
 
 	var app = angular.module('app');
 	app.service('profileService', ['$window', function ($window) {
+		var vm = this;
 		var key = 'todoProfile';
 
-		this.get = function(){
+		vm.check = check;
+		vm.get = get;
+		vm.set = set;
+
+		function get(){
 			var profileString = $window.localStorage.getItem(key);
 			if (!profileString) return;
 
@@ -17,19 +22,19 @@
 			return profileObject;
 		}
 
-		this.set = function(profileObject){
+		function set(profileObject){
 			var profileString = angular.toJson(profileObject);
 			$window.localStorage.setItem(key, profileString);
 		}
 
 
-		this.check = function(model){
-			var profileFromLS = this.get();
+		function check(model){
+			var profileFromLoc = vm.get();
 
-			if (profileFromLS && model !== profileFromLS){
-				model.userName = profileFromLS.userName;
-				model.userPhoto = profileFromLS.userPhoto;
-				model.items = profileFromLS.items;
+			if (profileFromLoc && model !== profileFromLoc){
+				model.userName = profileFromLoc.userName;
+				model.userPhoto = profileFromLoc.userPhoto;
+				model.items = profileFromLoc.items;
 			}
 
 		}

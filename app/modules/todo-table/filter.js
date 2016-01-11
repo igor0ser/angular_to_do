@@ -5,18 +5,15 @@
 
 	function checkedItems(){
 		return function(items, showComplete){
-			var resultArr = [];
+			if (!angular.isArray(items) || showComplete) return items;
 
-			if (angular.isArray(items)){
-				angular.forEach(items, function(item){
-					if (item.done === false || showComplete === true){
-						resultArr.push(item);
-					}
-				});
-			} else {
-				return items;
-			}
-		return resultArr;
+			var resultArr = [];
+			angular.forEach(items, function(item){
+				if (item.done === false){
+					resultArr.push(item);
+				}
+			});
+			return resultArr;
 		}
 	}
 

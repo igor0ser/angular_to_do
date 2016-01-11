@@ -1,5 +1,6 @@
 <form class="form-horizontal" name="todoForm" novalidate 
 ng-submit="todoForm.$valid && FormCtrl.addNewItem(FormCtrl.model.items, FormCtrl.newItem)">
+
 	<div class="form-group">
 		<label for="description" class="col-sm-2 control-label">
 			Description:
@@ -11,6 +12,7 @@ ng-submit="todoForm.$valid && FormCtrl.addNewItem(FormCtrl.model.items, FormCtrl
 			ng-model="FormCtrl.newItem.description">
 		</div>
 	</div>
+
 	<div class="form-group">
 		<label for="responsible" class="col-sm-2 control-label">
 			Responsible:
@@ -21,6 +23,7 @@ ng-submit="todoForm.$valid && FormCtrl.addNewItem(FormCtrl.model.items, FormCtrl
 			ng-model="FormCtrl.newItem.responsible">
 		</div>
 	</div>
+
 	<div class="form-group">
 		<label for="est-hours" class="col-sm-2 control-label">
 			Established Hours:
@@ -31,6 +34,7 @@ ng-submit="todoForm.$valid && FormCtrl.addNewItem(FormCtrl.model.items, FormCtrl
 			ng-model="FormCtrl.newItem.estHours">
 		</div>
 	</div>
+
 	<div class="form-group">
 		<label for="deadline" class="col-sm-2 control-label">
 			Deadline:
@@ -50,6 +54,7 @@ ng-submit="todoForm.$valid && FormCtrl.addNewItem(FormCtrl.model.items, FormCtrl
 			</button>
 		</div>
 	</div>
+	
 </form>
 
 
