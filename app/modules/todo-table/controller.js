@@ -3,7 +3,7 @@
 
 	var app = angular.module('app')
 
-	app.controller('TodoTableController', ['$scope', 'model', 'profileService', function ($scope, model, profileService){
+	app.controller('TodoTableController', ['$scope', '$http', 'model', 'profileService', function ($scope, $http, model, profileService){
 		
 		var vm = this;
 
@@ -29,6 +29,27 @@
 		vm.search = search;
 		vm.prevPage = prevPage;
 		vm.nextPage = nextPage;
+		vm.loadFromServer = loadFromServer;
+
+
+		function loadFromServer(){
+			$http
+				.get("todoAnother.json")
+				.success(function(data){
+					var result = data;
+					for (var i = 0; i < result.length; i++){
+						result[i].deadline = new Date(result.deadline);
+						model.items.unshift(result[i]);
+					}
+					vm.saveChanges();
+				})
+				.error(function(data){
+					alert('Some error in http request happened');
+				});
+
+			console.log($http
+				.get("todoAnother.json"));
+		}
 
 
 
@@ -37,7 +58,7 @@
 				if (vm.sortReverse){
 					return 'glyphicon glyphicon-chevron-up';
 				} else {
-					return 'glyphicon glyphicon-chevron-down'
+					return 'glyphicon glyphicon-chevron-down';
 				}
 			}
 		}
@@ -80,11 +101,11 @@
 
 		function prevPage() {
 			vm.firstTaskShown = (vm.firstTaskShown - +vm.showTasksPerPage) < 0 ? 0 : 
-								(vm.firstTaskShown - +vm.showTasksPerPage)
+								(vm.firstTaskShown - +vm.showTasksPerPage);
 		}
 
 		function nextPage() {
-			vm.firstTaskShown = vm.firstTaskShown + +vm.showTasksPerPage
+			vm.firstTaskShown = vm.firstTaskShown + +vm.showTasksPerPage;
 		}
 	}]);
 

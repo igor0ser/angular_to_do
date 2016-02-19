@@ -13,7 +13,7 @@
 			.get("todo.json")
 			.success(function(data){
 				for (var i = 0; i < data.length; i++){
-					data.deadline = new Date(data.deadline);
+					data[i].deadline = new Date(data.deadline);
 				}
 				model.items = data;
 			});
