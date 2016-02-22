@@ -1,5 +1,5 @@
 <form class="form-horizontal" name="todoForm" novalidate 
-ng-submit="todoForm.$valid && FormCtrl.addNewItem()">
+ng-submit="todoForm.$valid && FormCtrl.saveItem()">
 
 	<div class="form-group">
 		<label for="description" class="col-sm-2 control-label">
@@ -9,7 +9,7 @@ ng-submit="todoForm.$valid && FormCtrl.addNewItem()">
 			<input 
 			type="text" class="form-control" required
 			id="description"
-			ng-model="FormCtrl.newItem.description">
+			ng-model="FormCtrl.task.description">
 		</div>
 	</div>
 
@@ -18,10 +18,7 @@ ng-submit="todoForm.$valid && FormCtrl.addNewItem()">
 			Responsible:
 		</label>
 		<div class="col-sm-10">
-<!-- 			<input type="text" class="form-control" required
-id="responsible" placeholder="Responsible"
-ng-model="FormCtrl.newItem.responsible"> -->
-			<select id="responsible" class="form-control" ng-model="FormCtrl.newItem.responsible" required>
+			<select id="responsible" class="form-control" ng-model="FormCtrl.task.responsible" required>
 				<option ng-repeat="user in FormCtrl.model.users" value = "{{user.name}}">
 					{{user.name}}
 				</option>
@@ -38,7 +35,7 @@ ng-model="FormCtrl.newItem.responsible"> -->
 		<div class="col-sm-10">
 			<input type="number" min=1 class="form-control" required
 			id="est-hours"
-			ng-model="FormCtrl.newItem.estHours">
+			ng-model="FormCtrl.task.estHours">
 		</div>
 	</div>
 
@@ -49,7 +46,7 @@ ng-model="FormCtrl.newItem.responsible"> -->
 		<div class="col-sm-10">
 			<input type="date" class="form-control" required
 			id="deadline"
-			ng-model="FormCtrl.newItem.deadline">
+			ng-model="FormCtrl.task.deadline">
 		</div>
 	</div>
 
@@ -57,7 +54,10 @@ ng-model="FormCtrl.newItem.responsible"> -->
 		<div class="col-sm-offset-2 col-sm-10">
 			<button ng-disabled="!todoForm.$valid"
 			type="submit" class="btn btn-success">
-				Add Task
+				Save Task
+			</button>
+			<button class="btn btn-success" ng-click="FormCtrl.goToHomePage()">
+				Cancel
 			</button>
 		</div>
 	</div>

@@ -1,7 +1,7 @@
 Apply Routing to your task app.
 +	Create task
--	Edit task
++	Edit task
 -	Delete task
--	Create user
++	Create user
 -	Edit user
 -	Delete user with check: if there is no task assigned to user

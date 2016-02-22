@@ -17,6 +17,9 @@
 			.when("/addUser", {
 				template: "<add-user></add-user>"
 			})
+			.when("/editTask/:taskId", {
+				template: "<edit-task></edit-task>"
+			})
 			.otherwise("/");
 
 

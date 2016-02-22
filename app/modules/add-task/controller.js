@@ -8,10 +8,9 @@
 
 		//model
 		vm.model = model;
-		vm.newItem = {}
+		vm.newItem = {};
 		//functions
 		vm.addNewItem = addNewItem;
-
 
 		function addNewItem(){
 			vm.model.items.push({

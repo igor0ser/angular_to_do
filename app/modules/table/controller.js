@@ -34,7 +34,7 @@
 
 		function loadFromServer(){
 			$http
-				.get("todoAnother.json")
+				.get("/data/tasks2.json")
 				.success(function(data){
 					var result = data;
 					for (var i = 0; i < result.length; i++){
@@ -45,10 +45,7 @@
 				})
 				.error(function(data){
 					alert('Some error in http request happened');
-				});
-
-			console.log($http
-				.get("todoAnother.json"));
+				}); 	
 		}
 
 

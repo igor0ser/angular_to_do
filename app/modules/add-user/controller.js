@@ -8,24 +8,20 @@
 
 		//model
 		vm.model = model;
-		vm.newItem = {}
+		vm.newUser = {};
 		//functions
-		vm.addNewItem = addNewItem;
+		vm.addNewUser = addNewUser;
 
 
-		function addNewItem(){
-			vm.model.items.push({
-				description: vm.newItem.description,
-				responsible: vm.newItem.responsible,
-				estHours: vm.newItem.estHours,
-				deadline: new Date(vm.newItem.deadline),
-				done: false
+		function addNewUser(){
+			vm.model.users.push({
+				name: vm.newUser.name,
 			});
 
 			profileService.set(vm.model);
-			vm.newItem = {};
+			vm.newUser = {};
 
-			angular.element('[name="todoForm"] .form-control').removeClass('ng-dirty');
+			angular.element('[name="userForm"] .form-control').removeClass('ng-dirty');
 		};
 	}]);
 	

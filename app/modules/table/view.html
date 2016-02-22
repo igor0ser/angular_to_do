@@ -55,7 +55,11 @@
 					| limitTo : TableCtrl.showTasksPerPage : TableCtrl.firstTaskShown
 			"> 
 				<td>{{$index + 1 + +TableCtrl.firstTaskShown}}</td>
-				<td>{{item.description}}</td>
+				<td>
+					<a ng-href="#/editTask/{{ $index }}">
+						{{item.description}}
+					</a>
+				</td>
 				<td>{{item.responsible}}</td>
 				<td>{{item.estHours}}</td>
 				<td>{{item.deadline | date:'HH:mm dd MMM yyyy'}}</td>
