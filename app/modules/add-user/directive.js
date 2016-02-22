@@ -3,12 +3,12 @@
 
 	var app = angular.module('app');
 
-	app.directive('todoForm', function(){
+	app.directive('addUser', function(){
 		return {
 			replace: true,
 			restrict: 'E',
-			templateUrl: '/modules/todo-form/view.html',
-			controller: 'todoFormController',
+			templateUrl: '/modules/add-user/view.html',
+			controller: 'AddUserController',
 			controllerAs: 'FormCtrl'
 		}
 	});

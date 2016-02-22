@@ -9,7 +9,7 @@
 			replace: true,
 			restrict: 'E',
 			templateUrl: '/modules/edit-profile/view.html',
-			controller: 'editProfileController',
+			controller: 'EditProfileController',
 			controllerAs: 'EditProfileCtrl'
 		};
 	});

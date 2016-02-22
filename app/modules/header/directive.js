@@ -7,8 +7,8 @@
 		return {
 			replace: true,
 			restrict: 'E',
-			templateUrl: '/modules/todo-header/view.html',
-			controller: 'todoHeaderController',
+			templateUrl: '/modules/header/view.html',
+			controller: 'HeaderController',
 			controllerAs: 'HeaderCtrl'
 		};
 	});

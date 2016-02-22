@@ -21,9 +21,20 @@
 		
 		<todo-header></todo-header>
 
-		<todo-form></todo-form>
+		<nav>
+			<ul class="nav nav-tabs">
+				<li role="presentation" class="active"><a href="#/">Tasks</a></li>
+				<li role="presentation"><a href="#/addTask">Add Task</a></li>
+				<li role="presentation"><a href="#/addUser">Add User</a></li>
+			</ul>
+		</nav>
 
-		<task-table></task-table>
+		<div ng-view></div>
+
+<!-- 
+<todo-form></todo-form>
+<task-table></task-table> 
+-->
 
 
 	</div>
@@ -33,18 +44,23 @@
 
 	<!-- angular -->
 	<script src="vendor/angular/angular.min.js"></script>
+	<script src="vendor/angular-route/angular-route.min.js"></script>
 	<!-- app -->
 	<script src="app.js"></script>
+	<script src="app.config.js"></script>
 	<!-- header -->
-	<script src="modules/todo-header/controller.js"></script>
-	<script src="modules/todo-header/directive.js"></script>
-	<!-- form -->
-	<script src="modules/todo-form/controller.js"></script>
-	<script src="modules/todo-form/directive.js"></script>
+	<script src="modules/header/controller.js"></script>
+	<script src="modules/header/directive.js"></script>
+	<!-- add task -->
+	<script src="modules/add-task/controller.js"></script>
+	<script src="modules/add-task/directive.js"></script>
+	<!-- add user -->
+	<script src="modules/add-user/controller.js"></script>
+	<script src="modules/add-user/directive.js"></script>
 	<!-- table -->
-	<script src="modules/todo-table/directive.js"></script>
-	<script src="modules/todo-table/controller.js"></script>
-	<script src="modules/todo-table/filter.js"></script>
+	<script src="modules/table/directive.js"></script>
+	<script src="modules/table/controller.js"></script>
+	<script src="modules/table/filter.js"></script>
 	<!-- profile -->
 	<script src="modules/edit-profile/directive.js"></script>
 	<script src="modules/edit-profile/controller.js"></script>

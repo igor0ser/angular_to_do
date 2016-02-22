@@ -3,7 +3,7 @@
 
 	var app = angular.module('app');
 
-	app.controller( 'editProfileController', ['model', 'profileService', function(model, profileService){
+	app.controller('EditProfileController', ['model', 'profileService', function(model, profileService){
 		var vm = this;
 
 		profileService.check(model);

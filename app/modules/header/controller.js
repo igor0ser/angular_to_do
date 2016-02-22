@@ -3,7 +3,7 @@
 
 	var app = angular.module('app');
 
-	app.controller( 'todoHeaderController', ['model', 'profileService', function(model, profileService){
+	app.controller( 'HeaderController', ['model', 'profileService', function(model, profileService){
 		var vm = this;
 
 		//model

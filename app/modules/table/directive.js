@@ -7,7 +7,7 @@
 		return {
 			replace: true,
 			restrict: 'E',
-			templateUrl: '/modules/todo-table/view.html',
+			templateUrl: '/modules/table/view.html',
 			controller: 'TodoTableController',
 			controllerAs: 'TableCtrl'
 		};

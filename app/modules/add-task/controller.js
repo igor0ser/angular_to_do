@@ -3,7 +3,7 @@
 
 	var app = angular.module('app');
 	
-	app.controller('todoFormController', ['model', 'profileService', function(model, profileService){
+	app.controller('AddTaskController', ['model', 'profileService', function(model, profileService){
 		var vm = this;
 
 		//model
