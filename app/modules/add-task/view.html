@@ -18,10 +18,7 @@ ng-submit="todoForm.$valid && FormCtrl.addNewItem()">
 			Responsible:
 		</label>
 		<div class="col-sm-10">
-<!-- 			<input type="text" class="form-control" required
-id="responsible" placeholder="Responsible"
-ng-model="FormCtrl.newItem.responsible"> -->
-			<select id="responsible" class="form-control" ng-model="FormCtrl.newItem.responsible" required>
+			<select id="responsible" class="form-control" ng-model="FormCtrl.responsibleName" required>
 				<option ng-repeat="user in FormCtrl.model.users" value = "{{user.name}}">
 					{{user.name}}
 				</option>

@@ -11,6 +11,8 @@
 		//model
 		vm.model = model;
 		vm.task = model.items[id];
+		vm.responsible = model.users[vm.task.responsible].name;
+
 
 
 		//functions
@@ -21,7 +23,6 @@
 			vm.model.items[id] = vm.task;
 			profileService.set(vm.model);
 			goToHomePage();
-
 		}
 
 		function goToHomePage(){

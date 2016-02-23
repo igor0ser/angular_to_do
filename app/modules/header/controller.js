@@ -12,6 +12,8 @@
 		//functions
 		vm.warningLevel = warningLevel;
 		vm.incompleteCount = incompleteCount;
+		vm.refreshLocalStorage = refreshLocalStorage;
+
 
 		function incompleteCount(items){
 			var count = 0;
@@ -24,6 +26,10 @@
 		function warningLevel(items){
 			var result =  incompleteCount(items) <= items.length/2 ? "label-success" : "label-warning";
 			return result;
+		}
+
+		function refreshLocalStorage() {
+			profileService.refresh();
 		}
 
 	}]);

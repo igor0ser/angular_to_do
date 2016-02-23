@@ -9,6 +9,7 @@
 		vm.check = check;
 		vm.get = get;
 		vm.set = set;
+		vm.refresh = refresh;
 
 		function get(){
 			var profileString = $window.localStorage.getItem(key);
@@ -35,8 +36,14 @@
 				model.userName = profileFromLoc.userName;
 				model.userPhoto = profileFromLoc.userPhoto;
 				model.items = profileFromLoc.items;
+				model.users = profileFromLoc.users;
 			}
 
+		}
+
+		function refresh(){
+			$window.localStorage.clear();
+			$window.location.reload();
 		}
 
 	}]);

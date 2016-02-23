@@ -18,7 +18,7 @@ ng-submit="todoForm.$valid && FormCtrl.saveItem()">
 			Responsible:
 		</label>
 		<div class="col-sm-10">
-			<select id="responsible" class="form-control" ng-model="FormCtrl.task.responsible" required>
+			<select id="responsible" class="form-control" ng-model="FormCtrl.responsible" required>
 				<option ng-repeat="user in FormCtrl.model.users" value = "{{user.name}}">
 					{{user.name}}
 				</option>

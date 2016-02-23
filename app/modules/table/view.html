@@ -56,18 +56,23 @@
 			"> 
 				<td>{{$index + 1 + +TableCtrl.firstTaskShown}}</td>
 				<td>
-					<a ng-href="#/editTask/{{ $index }}">
+					<a ng-click="TableCtrl.goToEditTask(item)">
 						{{item.description}}
 					</a>
 				</td>
-				<td>{{item.responsible}}</td>
+				<td>
+					<a ng-href="#/user/{{ item.responsible }}">
+						{{TableCtrl.model.users[item.responsible].name}}
+					</a>
+
+				</td>
 				<td>{{item.estHours}}</td>
 				<td>{{item.deadline | date:'HH:mm dd MMM yyyy'}}</td>
 				<td><input type="checkbox" ng-model="item.done" ng-click="TableCtrl.saveChanges()"></td>
 				<td>{{item.done}}</td>
 				<td>
 					<button class="btn" 
-						ng-click="TableCtrl.remove($index)"
+						ng-click="TableCtrl.remove(item)"
 						ng-class="item.done ? 'btn-success' : 'btn-warning'">
 						Del
 					</button>

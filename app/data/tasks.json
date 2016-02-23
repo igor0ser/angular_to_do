@@ -1,210 +1,210 @@
 [
 	{
 		"description": "Learn AngularJS", 
-		"responsible": "Igor Sergiienko",
+		"responsible": 0,
 		"estHours": 20,
 		"deadline": "2015-12-31T12:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Learn jQuery", 
-		"responsible": "Igor Sergiienko",
+		"responsible": 0,
 		"estHours": 18,
 		"deadline": "2015-11-30T18:00:00.000Z",
 		"done": true
 	},
 	{
 		"description": "Finish my homework", 
-		"responsible": "Igor Sergiienko",
+		"responsible": 0,
 		"estHours": 8,
 		"deadline": "2016-01-30T18:00:00.000Z",
 		"done": false
 	},
 		{
 		"description": "Task2", 
-		"responsible": "Johny Walker",
+		"responsible": 1,
 		"estHours": 20,
 		"deadline": "2016-01-30T12:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Some Task", 
-		"responsible": "Johny Walker",
+		"responsible": 1,
 		"estHours": 9 ,
 		"deadline": "2016-01-30T18:00:00.000Z",
 		"done": true
 	},
 	{
 		"description": "Nasktask", 
-		"responsible": "Johny Walker",
+		"responsible": 1,
 		"estHours": 11,
 		"deadline": "2016-01-29T18:00:00.000Z",
 		"done": false
 	},
 		{
 		"description": "Do some work", 
-		"responsible": "Mark Twen",
+		"responsible": 3,
 		"estHours": 6,
 		"deadline": "2016-02-30T18:00:00.000Z",
 		"done": false
 	},
 		{
 		"description": "Read notebook", 
-		"responsible": "Mark Twen",
+		"responsible": 3,
 		"estHours": 13,
 		"deadline": "2016-02-30T12:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Go to th shop", 
-		"responsible": "Mark Twen",
+		"responsible": 3,
 		"estHours": 12,
 		"deadline": "2016-02-30T18:00:00.000Z",
 		"done": true
 	},
 	{
 		"description": "Watch educational movie", 
-		"responsible": "Mark Twen",
+		"responsible": 3,
 		"estHours": 4,
 		"deadline": "2016-02-29T18:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Save world", 
-		"responsible": "Corban Dallas",
+		"responsible": 4,
 		"estHours": 8,
 		"deadline": "2016-01-29T18:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Buy matches", 
-		"responsible": "Corban Dallas",
+		"responsible": 4,
 		"estHours": 8,
 		"deadline": "2016-02-30T18:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Help someone else", 
-		"responsible": "Corban Dallas",
+		"responsible": 4,
 		"estHours": 20,
 		"deadline": "2016-02-30T12:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Another random task", 
-		"responsible": "Corban Dallas",
+		"responsible": 4,
 		"estHours": 4,
 		"deadline": "2016-02-30T18:00:00.000Z",
 		"done": true
 	},
 	{
 		"description": "ok, go on", 
-		"responsible": "Corban Dallas",
+		"responsible": 4,
 		"estHours": 5,
 		"deadline": "2016-02-16T18:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Wash supersuite", 
-		"responsible": "Clark Kent",
+		"responsible": 5,
 		"estHours": 7,
 		"deadline": "2016-01-19T18:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Iron suite", 
-		"responsible": "Clark Kent",
+		"responsible": 5,
 		"estHours": 9,
 		"deadline": "2016-03-30T18:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Nevermind", 
-		"responsible": "Clark Kent",
+		"responsible": 5,
 		"estHours": 1,
 		"deadline": "2016-03-30T12:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Lorem ipsum", 
-		"responsible": "Clark Kent",
+		"responsible": 5,
 		"estHours": 38,
 		"deadline": "2016-02-30T18:00:00.000Z",
 		"done": true
 	},
 	{
 		"description": "Fight with general Zod", 
-		"responsible": "Clark Kent",
+		"responsible": 5,
 		"estHours": 16,
 		"deadline": "2016-02-29T18:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Make a tatoo", 
-		"responsible": "Leonard Shelby",
+		"responsible": 6,
 		"estHours": 23,
 		"deadline": "2016-01-19T18:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Find a better car", 
-		"responsible": "Leonard Shelby",
+		"responsible": 6,
 		"estHours": 1,
 		"deadline": "2016-03-30T18:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Find John D", 
-		"responsible": "Leonard Shelby",
+		"responsible": 6,
 		"estHours": 11,
 		"deadline": "2016-03-30T12:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Another Lorem ipsum", 
-		"responsible": "Leonard Shelby",
+		"responsible": 6,
 		"estHours": 4,
 		"deadline": "2016-02-30T18:00:00.000Z",
 		"done": true
 	},
 	{
 		"description": "and again", 
-		"responsible": "Leonard Shelby",
+		"responsible": 6,
 		"estHours": 13,
 		"deadline": "2016-02-29T18:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Find murderer", 
-		"responsible": "John Luther",
+		"responsible": 7,
 		"estHours": 17,
 		"deadline": "2016-04-09T18:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Don't watch third season", 
-		"responsible": "John Luther",
+		"responsible": 7,
 		"estHours": 14,
 		"deadline": "2020-01-01T18:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Ok, I'm tired of this", 
-		"responsible": "John Luther",
+		"responsible": 7,
 		"estHours": 2,
 		"deadline": "2017-09-09T12:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Almost done", 
-		"responsible": "John Luther",
+		"responsible": 7,
 		"estHours": 11,
 		"deadline": "2016-02-15T18:00:00.000Z",
 		"done": true
 	},
 	{
 		"description": "The last one", 
-		"responsible": "John Luther",
+		"responsible": 7,
 		"estHours": 5,
 		"deadline": "2017-05-11T18:00:00.000Z",
 		"done": false

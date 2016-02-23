@@ -1,35 +1,35 @@
 [
 	{
 		"description": "Abcdefghijklmnopqrstuvwxyz", 
-		"responsible": "John Papa",
+		"responsible": 8,
 		"estHours": 11,
 		"deadline": "2015-12-31T12:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Abcdefghijklmnopqrstuvwxyz", 
-		"responsible": "John Papa",
+		"responsible": 8,
 		"estHours": 11,
 		"deadline": "2015-12-31T12:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Abcdefghijklmnopqrstuvwxyz", 
-		"responsible": "John Papa",
+		"responsible": 8,
 		"estHours": 11,
 		"deadline": "2015-12-31T12:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Abcdefghijklmnopqrstuvwxyz", 
-		"responsible": "John Papa",
+		"responsible": 8,
 		"estHours": 11,
 		"deadline": "2015-12-31T12:00:00.000Z",
 		"done": false
 	},
 	{
 		"description": "Abcdefghijklmnopqrstuvwxyz", 
-		"responsible": "John Papa",
+		"responsible": 8,
 		"estHours": 11,
 		"deadline": "2015-12-31T12:00:00.000Z",
 		"done": false

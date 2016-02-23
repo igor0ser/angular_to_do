@@ -3,7 +3,7 @@
 
 	var app = angular.module('app')
 
-	app.controller('TodoTableController', ['$scope', '$http', 'model', 'profileService', function ($scope, $http, model, profileService){
+	app.controller('TodoTableController', ['$scope', '$http', 'model', 'profileService', '$location', function ($scope, $http, model, profileService, $location){
 		
 		var vm = this;
 
@@ -30,6 +30,7 @@
 		vm.prevPage = prevPage;
 		vm.nextPage = nextPage;
 		vm.loadFromServer = loadFromServer;
+		vm.goToEditTask = goToEditTask;
 
 
 		function loadFromServer(){
@@ -45,7 +46,7 @@
 				})
 				.error(function(data){
 					alert('Some error in http request happened');
-				}); 	
+				});
 		}
 
 
@@ -60,8 +61,9 @@
 			}
 		}
 
-		function remove(i){
-			vm.model.items.splice(i, 1);
+		function remove(item){
+			var id = vm.model.items.indexOf(item);
+			vm.model.items.splice(id, 1);
 			vm.saveChanges();
 		}
 
@@ -89,9 +91,10 @@
 
 		function search(task) {
 			if (vm.searchQuery === '') return true;
+			var users = vm.model.users;
 
 			var firstFlag = angular.lowercase(task.description).indexOf(angular.lowercase(vm.searchQuery)) !== -1;
-			var secondFlag = angular.lowercase(task.responsible).indexOf(angular.lowercase(vm.searchQuery)) !== -1;
+			var secondFlag = angular.lowercase(users[task.responsible].name).indexOf(angular.lowercase(vm.searchQuery)) !== -1;
 
 			return firstFlag || secondFlag;
 		}
@@ -103,6 +106,13 @@
 
 		function nextPage() {
 			vm.firstTaskShown = vm.firstTaskShown + +vm.showTasksPerPage;
+		}
+
+		function goToEditTask(item) {
+			var id = model.items.indexOf(item);
+			console.log(id);
+			console.log($location);
+			$location.path('/editTask/' + id);
 		}
 	}]);
 

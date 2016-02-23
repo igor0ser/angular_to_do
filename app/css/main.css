@@ -24,6 +24,14 @@ input:-webkit-autofill{
 	margin-left: 25px;
 }
 
-nav{
+nav, .user-well{
 	margin-bottom: 35px;
+}
+
+.edit-user .control-label{
+	text-align: justify;
+}
+
+table a{
+	cursor: pointer;
 }
