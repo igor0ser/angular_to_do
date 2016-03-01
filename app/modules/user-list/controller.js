@@ -3,18 +3,13 @@
 
 	var app = angular.module('app');
 	
-	app.controller('UserListController', ['model',  '$routeParams',
-			function(model, $routeParams){
-
+	app.controller('UserListController', ['model',
+			function(model){
 		var vm = this;
-
 
 		//model
 		vm.model = model;
 		vm.users = model.users;
-		console.log(vm.users);
-
-
 	}]);
 	
 })();

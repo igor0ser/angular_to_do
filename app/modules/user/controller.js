@@ -3,11 +3,11 @@
 
 	var app = angular.module('app');
 	
-	app.controller('UserController', ['model',  '$routeParams',
-			function(model, $routeParams){
+	app.controller('UserController', ['model',  '$stateParams',
+			function(model, $stateParams){
 
 		var vm = this;
-		var id = +$routeParams['userId'];
+		var id = +$stateParams['userId'];
 
 		//model
 		vm.model = model;

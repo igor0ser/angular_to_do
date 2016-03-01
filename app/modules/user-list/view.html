@@ -1,5 +1,5 @@
 <ol>
 	<li ng-repeat="user in UserListCtrl.users">
-		<a ng-href="#/user/{{$index}}">{{user.name}}</a>
+		<a ui-sref="user({userId: $index})">{{user.name}}</a>
 	</li>
 </ol>

@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 
-	var app = angular.module('app', ['ngRoute']);
+	var app = angular.module('app', ['ui.router']);
 
 	app.value('model', {
 		userName: 'John Doe',

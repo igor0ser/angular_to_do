@@ -4,13 +4,8 @@
 	<meta charset="utf-8">
 	<title-profile></title-profile>
 	<link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link href="vendor/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet">
 	<link rel="favicon" href="favicon.ico">
-	
-<!-- 	<script src="vendor/jquery/dist/jquery.min.js"></script>
-	<script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script> -->
-
 </head>
 <body>
 
@@ -23,20 +18,13 @@
 
 		<nav>
 			<ul class="nav nav-tabs">
-				<li role="presentation" class="active"><a ng-href="#/">Tasks</a></li>
-				<li role="presentation"><a ng-href="#/addTask">Add Task</a></li>
-				<li role="presentation"><a ng-href="#/users">Users</a></li>
-				<li role="presentation"><a ng-href="#/addUser">Add User</a></li>
+				<li role="presentation" ui-sref-active="active"><a ui-sref="home" >Tasks</a></li>
+				<li role="presentation" ui-sref-active="active"><a ui-sref="addTask">Add Task</a></li>
+				<li role="presentation" ui-sref-active="active"><a ui-sref="userList">Users</a></li>
+				<li role="presentation" ui-sref-active="active"><a ui-sref="addUser">Add User</a></li>
 			</ul>
 		</nav>
-
-		<div ng-view></div>
-
-<!-- 
-<todo-form></todo-form>
-<task-table></task-table> 
--->
-
+		<ui-view></ui-view>
 
 	</div>
 

@@ -1,10 +1,4 @@
 <div>
-	<div class="user-well">
-		<div class="well">{{UserCtrl.user.name}}</div class="well">
-		<a class="btn btn-info" ng-href="#/user/{{UserCtrl.id}}/edit">Edit</a>
-		<a class="btn btn-info active" ng-href="#/user/{{UserCtrl.id}}/delete">Delete</a>
-	</div>
-
 	<div class="well" ng-if="UserCtrl.userTasks === 0">
 		<p>This user hasn't any tasks you can delete him!</p>
 		<button class="btn btn-lg btn-danger active" ng-click="UserCtrl.deleteUser()">

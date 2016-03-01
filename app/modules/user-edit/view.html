@@ -1,10 +1,4 @@
 <div>
-	<div class="user-well">
-		<div class="well">{{::UserCtrl.user.name}}</div class="well">
-		<a class="btn btn-info active" ng-href="#/user/{{UserCtrl.id}}/edit">Edit</a>
-		<a class="btn btn-info" ng-href="#/user/{{UserCtrl.id}}/delete">Delete</a>
-	</div>
-
 	<form class="form-horizontal edit-user" name="userForm" novalidate 
 	ng-submit="userForm.$valid && UserCtrl.saveChanges()">
 

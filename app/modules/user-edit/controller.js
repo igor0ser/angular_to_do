@@ -3,11 +3,11 @@
 
 	var app = angular.module('app');
 	
-	app.controller('UserEditController', ['model', 'profileService', '$routeParams', '$location',
-			function(model, profileService, $routeParams, $location){
+	app.controller('UserEditController', ['model', 'profileService', '$stateParams', '$state',
+			function(model, profileService, $stateParams, $state){
 
 		var vm = this;
-		var id = +$routeParams['userId'];
+		var id = +$stateParams['userId'];
 
 		//model
 		vm.model = model;
@@ -21,8 +21,7 @@
 		function saveChanges(){
 			vm.model.users[id] = vm.user;
 			profileService.set(vm.model);
-			console.log($location);
-			$location.path('/user/' + id);
+			$state.go('user', {userId : id});
 		}
 
 	}]);

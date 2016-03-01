@@ -1,56 +1,45 @@
 (function() {
 
 	angular
-		.module("app")
-		.config(configAppRouter)
-		.run(runApp);
+		.module('app')
+		.config(configAppRouter);
 
 
-	function configAppRouter($routeProvider, $locationProvider) {
-		$routeProvider
-			.when("/", {
-				template: "<task-table></task-table>",
+	function configAppRouter($stateProvider, $urlRouterProvider) {
+		$urlRouterProvider.otherwise('/');
+		$stateProvider
+			.state('home', {
+				url: '/',
+				template: '<task-table />'
 			})
-			.when("/addTask", {
-				template: "<add-task></add-task>"
+			.state('addTask', {
+				url: '/addTask',
+				template: '<add-task />'
 			})
-			.when("/addUser", {
-				template: "<add-user></add-user>"
+			.state('userList', {
+				url: '/users',
+				template: '<user-list />'
 			})
-			.when("/editTask/:taskId", {
-				template: "<edit-task></edit-task>"
+			.state('addUser', {
+				url: '/addUser',
+				template: '<add-user />'
 			})
-			.when("/users", {
-				template: "<user-list></user-list>"
+			.state('editTask', {
+				url: '/editTask/:taskId',
+				template: '<edit-task />'
 			})
-			.when("/user/:userId", {
-				template: "<user></user>"
+			.state('user', {
+				url: '/user/:userId',
+				template: '<user />'
 			})
-			.when("/user/:userId/edit", {
-				template: "<user-edit></user-edit>"
-			})
-			.when("/user/:userId/delete", {
-				template: "<user-delete></user-delete>",
-			})
-			.otherwise("/");
+				.state('user.edit', {
+					url: '/edit',
+					template: '<user-edit />'
+				})
+				.state('user.delete', {
+					url: '/delete',
+					template: '<user-delete />'
+				});
 		}
-
-
-		function runApp($rootScope, $route) {
-			$rootScope.$on("$routeChangeSuccess", function(event, next){
-				var currentURL = window.location.hash.slice(1);
-				var anchors = angular.element('.nav-tabs a');
-				anchors.parent().removeClass('active');
-
-				for (var i = 0; i < anchors.length; i++){
-					var href = anchors[i].getAttribute('href').slice(1);
-					if (href === currentURL) {
-						angular.element(anchors[i]).parent().addClass('active');
-					}
-				}
-			});
-		}
-
-
 
 })();

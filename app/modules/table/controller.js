@@ -3,7 +3,8 @@
 
 	var app = angular.module('app')
 
-	app.controller('TodoTableController', ['$scope', '$http', 'model', 'profileService', '$location', function ($scope, $http, model, profileService, $location){
+	app.controller('TodoTableController', ['model', 'profileService', '$http', '$state', 
+		function (model, profileService, $http, $state){
 		
 		var vm = this;
 
@@ -110,9 +111,7 @@
 
 		function goToEditTask(item) {
 			var id = model.items.indexOf(item);
-			console.log(id);
-			console.log($location);
-			$location.path('/editTask/' + id);
+			$state.go('editTask', {taskId: id});
 		}
 	}]);
 

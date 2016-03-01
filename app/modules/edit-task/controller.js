@@ -3,11 +3,11 @@
 
 	var app = angular.module('app');
 	
-	app.controller('EditTaskController', ['model', 'profileService', '$routeParams', '$location',
-			function(model, profileService, $routeParams, $location){
+	app.controller('EditTaskController', ['model', 'profileService', '$stateParams', '$state',
+			function(model, profileService, $stateParams, $state){
 
 		var vm = this;
-		var id = +$routeParams['taskId'];
+		var id = +$stateParams['taskId'];
 		//model
 		vm.model = model;
 		vm.task = model.items[id];
@@ -26,7 +26,7 @@
 		}
 
 		function goToHomePage(){
-			$location.path('#/');
+			$state.go('home');
 		}
 	}]);
 	

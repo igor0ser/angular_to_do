@@ -61,7 +61,7 @@
 					</a>
 				</td>
 				<td>
-					<a ng-href="#/user/{{ item.responsible }}">
+					<a ui-sref="user({ userId: item.responsible })">
 						{{TableCtrl.model.users[item.responsible].name}}
 					</a>
 

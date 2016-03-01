@@ -3,11 +3,11 @@
 
 	var app = angular.module('app');
 	
-	app.controller('UserDeleteController', ['model', 'profileService', '$routeParams', '$location',
-			function(model, profileService, $routeParams, $location ){
+	app.controller('UserDeleteController', ['model', 'profileService', '$stateParams', '$state',
+			function(model, profileService, $stateParams, $state ){
 
 		var vm = this;
-		var id = +$routeParams['userId'];
+		var id = +$stateParams['userId'];
 
 		//model
 		vm.model = model;
@@ -35,7 +35,7 @@
 			}
 
 			profileService.set(vm.model);
-			$location.path('#/users');
+			$state.go('userList');
 		}
 
 

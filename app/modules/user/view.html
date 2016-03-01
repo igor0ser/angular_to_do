@@ -1,8 +1,10 @@
 <div>
 	<div class="user-well">
 		<div class="well">{{UserCtrl.user.name}}</div class="well">
-		<a class="btn btn-info" ng-href="#/user/{{UserCtrl.id}}/edit">Edit</a>
-		<a class="btn btn-info" ng-href="#/user/{{UserCtrl.id}}/delete">Delete</a>
+		<a class="btn btn-info" ui-sref-active="disabled" ui-sref="user.edit({userId: UserCtrl.id})">Edit</a>
+		<a class="btn btn-info" ui-sref-active="disabled" ui-sref="user.delete({userId: UserCtrl.id})">Delete</a>
 	</div>
+	
+	<ui-view></ui-view>
 
 </div>

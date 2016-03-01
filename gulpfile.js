@@ -10,7 +10,7 @@ var concat = require('gulp-concat');
 var paths = {
 	localhost: "http://localhost:8000/index.html",
 	angular: "app/vendor/angular/angular.min.js",
-	route: "app/vendor/angular-route/angular-route.min.js",
+	route: "app/vendor/angular-ui-router/release/angular-ui-router.min.js",
 	app: "app/modules/app.js",
 	appConfig: "app/modules/app.config.js",
 	appModules: "app/modules/**/*.js",
@@ -21,7 +21,7 @@ var paths = {
 gulp.task('concat', function() {  
 	return gulp.src([
 			paths.jquery, paths.bootstrap,
-			paths.angular, paths.route,
+			paths.angular, paths.route, 
 			paths.app, paths.appConfig, paths.appModules
 		])
 		.pipe(concat('app.js'))
