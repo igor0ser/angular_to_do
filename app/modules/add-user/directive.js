@@ -9,7 +9,7 @@
 			restrict: 'E',
 			templateUrl: '/modules/add-user/view.html',
 			controller: 'AddUserController',
-			controllerAs: 'FormCtrl'
+			controllerAs: 'vm'
 		}
 	});
 

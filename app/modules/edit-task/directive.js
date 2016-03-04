@@ -9,7 +9,7 @@
 			restrict: 'E',
 			templateUrl: '/modules/edit-task/view.html',
 			controller: 'EditTaskController',
-			controllerAs: 'FormCtrl'
+			controllerAs: 'vm'
 		}
 	});
 

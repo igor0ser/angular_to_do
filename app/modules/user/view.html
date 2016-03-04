@@ -1,8 +1,8 @@
 <div>
 	<div class="user-well">
-		<div class="well">{{UserCtrl.user.name}}</div class="well">
-		<a class="btn btn-info" ui-sref-active="disabled" ui-sref="user.edit({userId: UserCtrl.id})">Edit</a>
-		<a class="btn btn-info" ui-sref-active="disabled" ui-sref="user.delete({userId: UserCtrl.id})">Delete</a>
+		<div class="well">{{vm.user.name}}</div class="well">
+		<a class="btn btn-info" ui-sref-active="disabled" ui-sref="user.edit({userId: vm.id})">Edit</a>
+		<a class="btn btn-info" ui-sref-active="disabled" ui-sref="user.delete({userId: vm.id})">Delete</a>
 	</div>
 	
 	<ui-view></ui-view>

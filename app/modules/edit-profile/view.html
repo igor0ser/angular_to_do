@@ -10,15 +10,15 @@
 
 			<div class="modal-body">
 				<form class="form-horizontal" name="editProfile" novalidate 
-				ng-submit="editProfile.$valid && EditProfileCtrl.editProfile()">
+				ng-submit="editProfile.$valid && vm.editProfile()">
 					<div class="form-group">
 						<label for="description" class="col-sm-2 control-label">
 							User name:
 						</label>
 						<div class="col-sm-10">
-							<input ng-model="EditProfileCtrl.newProfile.userName"
+							<input ng-model="vm.newProfile.userName"
 							type="text" class="form-control" 
-							id="description" placeholder="{{EditProfileCtrl.model.userName}}"
+							id="description" placeholder="{{vm.model.userName}}"
 							>
 						</div>
 					</div>
@@ -27,8 +27,8 @@
 							Avatar URL:
 						</label>
 						<div class="col-sm-10">
-							<input type="url" class="form-control" ng-model="EditProfileCtrl.newProfile.userPhoto"
-							id="responsible" placeholder="{{EditProfileCtrl.model.userPhoto}}">
+							<input type="url" class="form-control" ng-model="vm.newProfile.userPhoto"
+							id="responsible" placeholder="{{vm.model.userPhoto}}">
 						</div>
 					</div>
 

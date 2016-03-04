@@ -9,7 +9,7 @@
 			restrict: 'E',
 			templateUrl: '/modules/user-edit/view.html',
 			controller: 'UserEditController',
-			controllerAs: 'UserCtrl'
+			controllerAs: 'vm'
 		}
 	});
 

@@ -8,9 +8,9 @@
 		return {
 			replace: true,
 			restrict: 'E',
-			template: "<title>{{EditProfileCtrl.model.userName}}'s TO DO List</title>",
+			template: "<title>{{vm.model.userName}}'s TO DO List</title>",
 			controller: 'EditProfileController',
-			controllerAs: 'EditProfileCtrl'
+			controllerAs: 'vm'
 		};
 	});
 

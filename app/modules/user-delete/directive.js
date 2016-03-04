@@ -9,7 +9,7 @@
 			restrict: 'E',
 			templateUrl: '/modules/user-delete/view.html',
 			controller: 'UserDeleteController',
-			controllerAs: 'UserCtrl'
+			controllerAs: 'vm'
 		}
 	});
 

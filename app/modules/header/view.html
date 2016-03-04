@@ -1,16 +1,16 @@
 <div class="page-header">
 
 	<h1>
-		<img class="photo" ng-src="{{HeaderCtrl.model.userPhoto}}">
+		<img class="photo" ng-src="{{vm.model.userPhoto}}">
 		<span class="ml25">
-			{{HeaderCtrl.model.userName}}'s To Do List
+			{{vm.model.userName}}'s To Do List
 		</span>
 
 		<span 
-		ng-hide="HeaderCtrl.incompleteCount(HeaderCtrl.model.items) === 0"
-		ng-class="HeaderCtrl.warningLevel(HeaderCtrl.model.items)" 
+		ng-hide="vm.incompleteCount(vm.model.items) === 0"
+		ng-class="vm.warningLevel(vm.model.items)" 
 		class="label pull-right">
-			unresolved: {{HeaderCtrl.incompleteCount(HeaderCtrl.model.items)}}
+			unresolved: {{vm.incompleteCount(vm.model.items)}}
 		</span>
 
 	</h1> 
@@ -21,7 +21,7 @@
 
 	<button 
 		class="btn btn-danger btn-xs pull-right"
-		ng-click="HeaderCtrl.refreshLocalStorage()">
+		ng-click="vm.refreshLocalStorage()">
 		Refresh local storage
 	</button>
 

@@ -10,7 +10,7 @@
 			restrict: 'E',
 			templateUrl: '/modules/edit-profile/view.html',
 			controller: 'EditProfileController',
-			controllerAs: 'EditProfileCtrl'
+			controllerAs: 'vm'
 		};
 	});
 

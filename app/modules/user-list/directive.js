@@ -9,7 +9,7 @@
 			restrict: 'E',
 			templateUrl: '/modules/user-list/view.html',
 			controller: 'UserListController',
-			controllerAs: 'UserListCtrl'
+			controllerAs: 'vm'
 		}
 	});
 

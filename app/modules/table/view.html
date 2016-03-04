@@ -1,20 +1,20 @@
 <div class="panel">
 
 	<label>
-		<input type="checkbox" ng-model="TableCtrl.showComplete">
+		<input type="checkbox" ng-model="vm.showComplete">
 		Show completed
 	</label>
-	<button class="ml25 btn btn-danger" ng-click="TableCtrl.removeComplited()">
+	<button class="ml25 btn btn-danger" ng-click="vm.removeComplited()">
 		Delete all complited
 	</button>
-	<button class="ml25 btn btn-success" ng-click="TableCtrl.loadFromServer()">
+	<button class="ml25 btn btn-success" ng-click="vm.loadFromServer()">
 		Load tasks from servers
 	</button>
 
 	<div class="pull-right col-md-4 form-group">
 
 		<input type="text" class="form-control"
-			ng-model="TableCtrl.searchQuery"
+			ng-model="vm.searchQuery"
 			placeholder="Search for task in description or responsible">
 	</div>
 
@@ -24,21 +24,21 @@
 		<thead>
 			<tr>
 				<th>#</th>
-				<th ng-click="TableCtrl.sort('description')">
+				<th ng-click="vm.sort('description')">
 					Description
-					<i ng-class="TableCtrl.glyphicon('description')"></i>
+					<i ng-class="vm.glyphicon('description')"></i>
 				</th>
-				<th ng-click="TableCtrl.sort('responsible')">
+				<th ng-click="vm.sort('responsible')">
 					Responsible
-					<i ng-class="TableCtrl.glyphicon('responsible')"></i>
+					<i ng-class="vm.glyphicon('responsible')"></i>
 				</th>
-				<th ng-click="TableCtrl.sort('estHours')">
+				<th ng-click="vm.sort('estHours')">
 					Est. Hours
-					<i ng-class="TableCtrl.glyphicon('estHours')"></i>
+					<i ng-class="vm.glyphicon('estHours')"></i>
 				</th>
-				<th ng-click="TableCtrl.sort('deadline')">
+				<th ng-click="vm.sort('deadline')">
 					Deadline
-					<i ng-class="TableCtrl.glyphicon('deadline')"></i>
+					<i ng-class="vm.glyphicon('deadline')"></i>
 				</th>
 				<th>Checkbox</th>
 				<th>Done</th>
@@ -48,31 +48,31 @@
 
 		<tbody>
 			<tr ng-repeat="
-					item in TableCtrl.model.items  
-					| filter: TableCtrl.search
-					| checkedItems : TableCtrl.showComplete 
-					| orderBy : TableCtrl.sortField : TableCtrl.sortReverse
-					| limitTo : TableCtrl.showTasksPerPage : TableCtrl.firstTaskShown
+					item in vm.model.items  
+					| filter: vm.search
+					| checkedItems : vm.showComplete 
+					| orderBy : vm.sortField : vm.sortReverse
+					| limitTo : vm.showTasksPerPage : vm.firstTaskShown
 			"> 
-				<td>{{$index + 1 + +TableCtrl.firstTaskShown}}</td>
+				<td>{{$index + 1 + +vm.firstTaskShown}}</td>
 				<td>
-					<a ng-click="TableCtrl.goToEditTask(item)">
+					<a ng-click="vm.goToEditTask(item)">
 						{{item.description}}
 					</a>
 				</td>
 				<td>
 					<a ui-sref="user({ userId: item.responsible })">
-						{{TableCtrl.model.users[item.responsible].name}}
+						{{vm.model.users[item.responsible].name}}
 					</a>
 
 				</td>
 				<td>{{item.estHours}}</td>
 				<td>{{item.deadline | date:'HH:mm dd MMM yyyy'}}</td>
-				<td><input type="checkbox" ng-model="item.done" ng-click="TableCtrl.saveChanges()"></td>
+				<td><input type="checkbox" ng-model="item.done" ng-click="vm.saveChanges()"></td>
 				<td>{{item.done}}</td>
 				<td>
 					<button class="btn" 
-						ng-click="TableCtrl.remove(item)"
+						ng-click="vm.remove(item)"
 						ng-class="item.done ? 'btn-success' : 'btn-warning'">
 						Del
 					</button>
@@ -84,19 +84,19 @@
 
 	<button 
 		class="btn btn-success" 
-		ng-click="TableCtrl.prevPage()"
-		ng-disabled="TableCtrl.firstTaskShown <= 0">
+		ng-click="vm.prevPage()"
+		ng-disabled="vm.firstTaskShown <= 0">
 		Prev
 	</button>
 	<button 
 		class="btn btn-success" 
-		ng-click="TableCtrl.nextPage()"
-		ng-disabled="TableCtrl.firstTaskShown > TableCtrl.model.items.length - +TableCtrl.showTasksPerPage - 1">
+		ng-click="vm.nextPage()"
+		ng-disabled="vm.firstTaskShown > vm.model.items.length - +vm.showTasksPerPage - 1">
 		Next
 	</button>
 	<label class="ml25">
 		Show per page
-		<select ng-model="TableCtrl.showTasksPerPage">
+		<select ng-model="vm.showTasksPerPage">
 			<option value="5">5</option>
 			<option value="10">10</option>
 			<option value="20">20</option>

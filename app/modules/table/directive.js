@@ -9,7 +9,7 @@
 			restrict: 'E',
 			templateUrl: '/modules/table/view.html',
 			controller: 'TodoTableController',
-			controllerAs: 'TableCtrl'
+			controllerAs: 'vm'
 		};
 	});
 

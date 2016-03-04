@@ -9,7 +9,7 @@
 			restrict: 'E',
 			templateUrl: '/modules/add-task/view.html',
 			controller: 'AddTaskController',
-			controllerAs: 'FormCtrl'
+			controllerAs: 'vm'
 		}
 	});
 

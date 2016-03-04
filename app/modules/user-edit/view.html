@@ -1,6 +1,6 @@
 <div>
 	<form class="form-horizontal edit-user" name="userForm" novalidate 
-	ng-submit="userForm.$valid && UserCtrl.saveChanges()">
+	ng-submit="userForm.$valid && vm.saveChanges()">
 
 		<div class="form-group">
 			<label for="description" class="col-sm-2 control-label">
@@ -10,7 +10,7 @@
 				<input 
 				type="text" class="form-control" required
 				id="description" placeholder="John Doe"
-				ng-model="UserCtrl.user.name">
+				ng-model="vm.user.name">
 			</div>
 		</div>
 

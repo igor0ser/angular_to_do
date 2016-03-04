@@ -9,7 +9,7 @@
 			restrict: 'E',
 			templateUrl: '/modules/header/view.html',
 			controller: 'HeaderController',
-			controllerAs: 'HeaderCtrl'
+			controllerAs: 'vm'
 		};
 	});
 

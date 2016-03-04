@@ -1,13 +1,13 @@
 <div>
-	<div class="well" ng-if="UserCtrl.userTasks === 0">
+	<div class="well" ng-if="vm.userTasks === 0">
 		<p>This user hasn't any tasks you can delete him!</p>
-		<button class="btn btn-lg btn-danger active" ng-click="UserCtrl.deleteUser()">
+		<button class="btn btn-lg btn-danger active" ng-click="vm.deleteUser()">
 			Delete user
 		</button>
 	</div>
 
-	<div class="well" ng-if="UserCtrl.userTasks !== 0">
-		<p>This user has {{UserCtrl.userTasks}} tasks! You cannot delete him now</p>
+	<div class="well" ng-if="vm.userTasks !== 0">
+		<p>This user has {{vm.userTasks}} tasks! You cannot delete him now</p>
 	</div>
 </div>
 
